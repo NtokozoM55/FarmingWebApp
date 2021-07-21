@@ -7,17 +7,18 @@
 </head>
 <body>
 	<ul>
-	  <li><a href="/farmer/">Home</a>
+	  <li><a href="/farmer/farmerhome">Home</a>
 	   <a href="">Crop Advertisement</a>
 	   <a href="/farmer/complaint">Complaints</a>
 	   <a href="/farmer/findfarmers">Find Farmers</a>
-	   <a href="/farmer/findsuppliers">Find Suppliers</a></li>
+	   <a href="/farmer/findsuppliers">Find Suppliers</a>
+	   <a href="/">Logout</a></li>
 	</ul>
 	<div align="center">
 
 		<h1>Farming Assistant App</h1>
 		<br />
-		<form th:action="@{/}">
+		<form th:action="@{/findfarmers}">
 			<input type="text" name="keyword" placeholder="Search For Farmers"  id="keyword" size="50"
 				${keyword}/>
 			&nbsp; <input type="submit" value="Search" />
@@ -38,11 +39,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${listUsers}" var="user" >
+				<c:forEach items="${listFarmers}" var="user" >
 				
 				<tr>
-					<td>${user.name}</td>
-					<td>${user.email}</td>
+					<td>${user.firstname}</td>
+					<td>${user.username}</td>
 					<td>${user.address}</td>
 
 					<td><a th:href="@{'/edit/' + ${user.id}}">View</a>

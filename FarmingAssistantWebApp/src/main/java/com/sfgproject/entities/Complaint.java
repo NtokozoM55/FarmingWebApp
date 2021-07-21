@@ -4,12 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "complaints")
 public class Complaint {
+	
+	@Id
 	private Long complaintId;
 	private String category;
-	private String complaint_details;
+	private String details;
+	private String status;
+	private Long farmerID;
 	
 	public Complaint() {
 		}
@@ -31,11 +37,28 @@ public class Complaint {
 	public void setCategory(String category) {
 		this.category =  category;
 	}
-	
-	public String getComplDetails() {
-		return complaint_details;
+
+	public String getDetails() {
+		return details;
 	}
-	public void setComplDetails(String complaint_details) {
-		this.complaint_details = complaint_details;
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Long getFarmerID() {
+		return farmerID;
+	}
+
+	public void setFarmerID(Long farmerID) {
+		this.farmerID = farmerID;
 	}
 }

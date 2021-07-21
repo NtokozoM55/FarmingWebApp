@@ -7,11 +7,12 @@
 </head>
 <body>
 	<ul>
-	  <li><a href="/farmer/">Home</a>
+	  <li><a href="/farmer/farmerhome">Home</a>
 	   <a href="">Crop Advertisement</a>
 	   <a href="/farmer/complaint">Complaints</a>
 	   <a href="/farmer/findfarmers">Find Farmers</a>
-	   <a href="/farmer/findsuppliers">Find Suppliers</a></li>
+	   <a href="/farmer/findsuppliers">Find Suppliers</a>
+	   <a href="/">Logout</a></li>
 	</ul>
 	<div align="center">
 

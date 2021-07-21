@@ -1,22 +1,26 @@
 package com.sfgproject.services;
 
-import java.util.List;
+import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//import com.sfgproject.Dto.UserRegistrationDto;
 import com.sfgproject.entities.User;
 import com.sfgproject.repositories.UserRepository;
 
 @Service
+@Transactional
 public class UserService {
-	@Autowired
-	private UserRepository repo;
 	
-	public List<User> listAll(String keyword) {
-		if (keyword != null) {
-			return repo.search(keyword);
-		}
-		return repo.findAll();
+	private final UserRepository userRepository;
+	
+	public UserService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+		
+	}
+	
+	public void saveNewUser(User user) {
+		
+		userRepository.save(user);
 	}
 }
